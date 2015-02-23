@@ -4,15 +4,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <title>Paste - {{.Id}}</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+     <script>
+        $(function() {
+
+        });
+     </script>
+     <title>Paste - {{.Id}}</title>
   </head>
   <body>
    <div class="container" id="view">
      <h2>{{.Title}}</h2>
-     <!-- Ask if he wants a user or something -->
      <hr width="80%"/>
      <center>
-       <h3>Posted on {{.Time}}</h3>
+
+       <script>
+         var v = {{.Time}} * 1000;
+          document.write("<h3>Posted on " + moment(v).format('MMMM Do YYYY, h:mm:ss a') + "</h3>")
+       </script>
+
      </center>
     <pre>
       {{.Content}}
